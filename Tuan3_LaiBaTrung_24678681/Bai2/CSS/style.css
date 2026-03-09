@@ -1,0 +1,170 @@
+﻿* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #d6e0ea;
+}
+
+.page-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0;
+}
+
+.site-box {
+  width: 94%;
+  max-width: 1050px;
+  background: #ffffff;
+  border: 2px solid #2f5d89;
+  box-shadow: 0 4px 0 #1f3f5c;
+}
+
+.top-bar {
+  background: #2f5d89;
+  color: white;
+  padding: 16px 18px 12px;
+}
+
+.logo-area img {
+  width: 90px;
+}
+
+.logo-text .big {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.search-box input {
+  background: #1f3f5c;
+  border: 2px solid #ffffff;
+  padding: 6px 8px;
+  color: white;
+}
+
+.go-btn {
+  background: #1f3f5c;
+  border: 2px solid #ffffff;
+  padding: 6px 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.menu {
+  margin-top: 14px;
+  text-decoration: none;
+}
+
+.menu a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu div {
+  background: #4f7fb1;
+  border: 2px solid #2f5d89;
+  color: white;
+  padding: 8px 16px;
+  font-weight: 600;
+  text-decoration: solid;
+}
+.wrapper {
+  padding: 18px;
+}
+
+.main-left h2 {
+  font-size: 24px;
+  color: #4a4a4a;
+}
+
+.dot {
+  border-top: 2px dotted #c8c8c8;
+  margin: 12px 0;
+}
+
+.short {
+  width: 85%;
+}
+
+.highlight {
+  color: #c15c1f;
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+.contact-form .form-control {
+  border: 1px solid #c8c8c8;
+  border-radius: 2px;
+}
+
+textarea.form-control {
+  height: 90px;
+}
+
+.btns {
+  display: flex;
+  gap: 12px;
+}
+
+.btns input {
+  padding: 6px 14px;
+  border: 1px solid #c8c8c8;
+  background: #f2f2f2;
+}
+
+.contact-right h3 {
+  font-size: 20px;
+  color: #4a4a4a;
+}
+
+.info-list p {
+  margin-bottom: 10px;
+}
+
+.info-list .space {
+  margin-bottom: 16px;
+}
+
+.main-right {
+  background: #fff1b8;
+  padding: 14px;
+  position: relative;
+  border: 1px solid #e1d59a;
+}
+
+.main-right h3 {
+  font-size: 20px;
+  color: #4a4a4a;
+}
+
+.rose {
+  width: 100%;
+  border: 3px double #333333;
+  margin: 12px 0;
+}
+
+.main-right a {
+  position: absolute;
+  bottom: 12px;
+  right: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  color: blue;
+}
+
+footer {
+  background: #2f5d89;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  font-size: 13px;
+}
+
+.footer-light {
+  color: #9fc4e8;
+}

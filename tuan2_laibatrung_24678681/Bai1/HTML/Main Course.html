@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example Cafe Menu</title>
+    <link rel="stylesheet" href="../CSS/Style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>EXAMPLE CAFE MENU</h1>
+      </header>
+
+      <nav class="main-nav">
+        <ul>
+          <li>
+            <a href="#"
+              ><img src="../IMG/Homeicon.png" alt="Home" class="nav-icon"
+            /></a>
+          </li>
+          <li><a href="#starter">STARTER</a></li>
+          <li><a href="#main-course">MAIN COURSE</a></li>
+          <li><a href="#desserts">DESSERTS</a></li>
+          <li>
+            <input type="text" placeholder="Search..." class="search-box" />
+            <button class="search-btn">Go</button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="content-wrapper">
+        <aside class="sidebar">
+          <ul class="sidebar-menu">
+            <li><a href="#" class="active">Cafe Latte</a></li>
+            <li><a href="#">Ice Blended</a></li>
+            <li><a href="#">Cake</a></li>
+            <li><a href="#">Munchies Corner</a></li>
+            <li><a href="#">Under Drinks</a></li>
+          </ul>
+
+          <div class="sidebar-image">
+            <img src="../IMG/company.png" alt="Company" />
+          </div>
+        </aside>
+
+        <main class="main-content">
+          <section id="starter" class="menu-section">
+            <h2>Starter</h2>
+            <ul class="menu-list">
+              <li>
+                Chicken and Mushroom Quiches <span class="price">($)</span>
+              </li>
+              <li>Crab Cheese <span class="price">($)</span></li>
+              <li><strong>HONEY APPLE CHICKEN DRUMSTICK</strong></li>
+              <li>Seafood Salad <span class="price">($)</span></li>
+            </ul>
+            <a href="#" class="back-link">Back to Top</a>
+          </section>
+
+          <section id="desserts" class="menu-section">
+            <h2>Desserts</h2>
+            <ul class="menu-list">
+              <li>Lemon Sorbet <span class="price">($)</span></li>
+              <li>Chocolate Mud Pie <span class="price">($)</span></li>
+              <li>Pecan Putty</li>
+              <li>
+                Selection of fine Cheeses from Around the World
+                <span class="price">($)</span>
+              </li>
+            </ul>
+            <a href="#" class="back-link">Back to Top</a>
+          </section>
+
+          <section class="info-section">
+            <h2>INFORMATION</h2>
+            <form class="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="firstname"
+                    placeholder="First Name"
+                  />
+                </div>
+                <div class="form-group">
+                  <input type="text" name="lastname" placeholder="Last Name" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="email" name="email" placeholder="Email" />
+                </div>
+                <div class="form-group">
+                  <input type="tel" name="telephone" placeholder="Telephone" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <select name="country">
+                    <option value="USA">USA</option>
+                    <option value="Vietnam">Vietnam</option>
+                    <option value="UK">UK</option>
+                    <option value="Japan">Japan</option>
+                  </select>
+                </div>
+                <div class="form-group checkbox-group">
+                  <label>
+                    <input type="radio" name="member" value="vietnamese" />
+                    Vietnamese
+                  </label>
+                  <label>
+                    <input type="radio" name="member" value="foreigner" />
+                    Foreigner
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group full-width">
+                  <textarea
+                    name="comment"
+                    rows="4"
+                    placeholder="Comment"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="form-buttons">
+                <button type="submit" class="btn-submit">Submit</button>
+                <button type="reset" class="btn-cancel">Cancel</button>
+              </div>
+            </form>
+          </section>
+        </main>
+
+        <aside class="events-sidebar">
+          <h2>Events</h2>
+
+          <div class="event-card">
+            <h3>Regular Meetings</h3>
+            <img src="../IMG/meeting.png" alt="Regular Meetings" />
+            <p>
+              Host your regular team meetings or activities in the comfort of
+              your own private room. <a href="#">Read more...</a>
+            </p>
+          </div>
+
+          <div class="event-card">
+            <h3>Product Launches</h3>
+            <img src="../IMG/launch.png" alt="Product Launches" />
+            <p>
+              Launch your product with ease in a space that truly fits its
+              unique flair. <a href="#">Read more...</a>
+            </p>
+          </div>
+        </aside>
+      </div>
+
+      <footer>
+        <p>ABC Company © - 12345678 - abccoffee@gmail.com</p>
+      </footer>
+    </div>
+  </body>
+</html>
