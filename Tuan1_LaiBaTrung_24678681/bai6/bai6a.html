@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Jackson Electronics Registration</title>
+  </head>
+
+  <body style="background-color: #9fd0f5; font-family: Arial">
+    <center>
+      <img
+        src="JackSon.png"
+        alt="Jackson Electronics"
+        width="300"
+      /><br /><br />
+
+      <h2>Registration Form</h2>
+      <p>Register your Jackson Electronics product here</p>
+
+      <form>
+        <table cellpadding="5">
+          <tr>
+            <td>First Name:</td>
+            <td><input type="text" /></td>
+            <td>Last Name:</td>
+            <td><input type="text" /></td>
+          </tr>
+
+          <tr>
+            <td>Address #1:</td>
+            <td colspan="3"><input type="text" size="50" /></td>
+          </tr>
+
+          <tr>
+            <td>Address #2:</td>
+            <td colspan="3"><input type="text" size="50" /></td>
+          </tr>
+
+          <tr>
+            <td>City:</td>
+            <td><input type="text" /></td>
+            <td>State:</td>
+            <td>
+              <input type="text" size="5" /> Zip: <input type="text" size="6" />
+            </td>
+          </tr>
+
+          <tr>
+            <td>Country:</td>
+            <td colspan="3">
+              <input type="text" value="United States" />
+            </td>
+          </tr>
+        </table>
+
+        <hr width="50%" />
+
+        <table cellpadding="5">
+          <tr>
+            <td>Product:</td>
+            <td>
+              <select>
+                <option>ScanMaster</option>
+                <option>PrintPro</option>
+                <option>CamX</option>
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Date Purchased:</td>
+            <td><input type="date" /></td>
+          </tr>
+
+          <tr>
+            <td>Serial #:</td>
+            <td><input type="text" /></td>
+          </tr>
+
+          <tr>
+            <td>Used for:</td>
+            <td>
+              <input type="radio" name="use" /> Home
+              <input type="radio" name="use" /> Business
+              <input type="radio" name="use" /> Government<br />
+              <input type="radio" name="use" /> Educational Institution
+              <input type="radio" name="use" /> Other
+            </td>
+          </tr>
+
+          <tr>
+            <td>System<br />(check all that apply):</td>
+            <td>
+              <input type="checkbox" /> Windows
+              <input type="checkbox" /> Macintosh <input type="checkbox" /> UNIX
+              <input type="checkbox" /> Other
+            </td>
+          </tr>
+        </table>
+
+        <hr width="50%" />
+
+        <p>Comments?</p>
+        <textarea rows="6" cols="60"></textarea><br /><br />
+
+        <input type="submit" value="Click to register" />
+        <input type="reset" value="Click to cancel" />
+      </form>
+    </center>
+  </body>
+</html>

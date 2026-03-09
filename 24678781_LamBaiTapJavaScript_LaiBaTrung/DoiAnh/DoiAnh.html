@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Doi Anh</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: #1a1a2e;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+      .card {
+        background: #16213e;
+        border-radius: 20px;
+        padding: 36px;
+        text-align: center;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        max-width: 500px;
+        width: 100%;
+      }
+      h1 {
+        font-size: 1.5rem;
+        color: #e2e8f0;
+        margin-bottom: 6px;
+      }
+      .subtitle {
+        color: #718096;
+        font-size: 0.9rem;
+        margin-bottom: 28px;
+      }
+      .img-wrapper {
+        background: #0f3460;
+        border-radius: 14px;
+        padding: 12px;
+        margin-bottom: 16px;
+        display: inline-block;
+      }
+      #myImage {
+        width: 280px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: all 0.4s ease;
+        display: block;
+      }
+      .status {
+        color: #a0aec0;
+        font-size: 0.82rem;
+        margin-bottom: 24px;
+      }
+      .btn-group {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+      }
+      .btn {
+        padding: 12px 28px;
+        border: none;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition:
+          transform 0.15s,
+          box-shadow 0.15s;
+      }
+      .btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      }
+      .btn:active {
+        transform: translateY(0);
+      }
+      .btn-blue {
+        background: #3182ce;
+        color: white;
+      }
+      .btn-green {
+        background: #38a169;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Doi Anh va Kich Thuoc</h1>
+      <p class="subtitle">Nhan nut de thay doi hinh anh hoac kich thuoc</p>
+
+      <div class="img-wrapper">
+        <img id="myImage" src="../DoiAnh/IMG/Seia.png" alt="Seia" />
+      </div>
+      <p class="status" id="imgStatus">
+        Hinh: Seia.png | Kich thuoc: Binh thuong
+      </p>
+
+      <div class="btn-group">
+        <button class="btn btn-blue" onclick="doiHinh()">
+          Button 1: Doi Hinh
+        </button>
+        <button class="btn btn-green" onclick="doiKichThuoc()">
+          Button 2: Doi Kich Thuoc
+        </button>
+      </div>
+    </div>
+
+    <script>
+      var danhSachAnh = ["IMG/Seia.png", "IMG/guga1.png", "IMG/guga.png"];
+      var tenAnh = ["Seia.png", "guaga1.png", "guga.png"];
+      var chiSo = 0;
+      var toTo = false;
+
+      function doiHinh() {
+        chiSo = (chiSo + 1) % danhSachAnh.length;
+        document.getElementById("myImage").src = danhSachAnh[chiSo];
+        capNhat();
+      }
+
+      function doiKichThuoc() {
+        var img = document.getElementById("myImage");
+        toTo = !toTo;
+        img.style.width = toTo ? "380px" : "280px";
+        img.style.height = toTo ? "280px" : "200px";
+        capNhat();
+      }
+
+      function capNhat() {
+        var kt = toTo ? "Lon" : "Binh thuong";
+        document.getElementById("imgStatus").textContent =
+          "Hinh: " + tenAnh[chiSo] + " | Kich thuoc: " + kt;
+      }
+    </script>
+  </body>
+</html>

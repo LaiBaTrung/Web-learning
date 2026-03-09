@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Doi Mau Nen</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: #f0f4f8;
+        transition: background-color 0.5s ease;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .card {
+        background: white;
+        border-radius: 16px;
+        padding: 40px 48px;
+        text-align: center;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        font-size: 1.6rem;
+        color: #1a202c;
+        margin-bottom: 8px;
+      }
+      p {
+        color: #718096;
+        margin-bottom: 32px;
+        font-size: 0.95rem;
+      }
+      .btn-group {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+      }
+      .btn {
+        padding: 14px 32px;
+        border: none;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition:
+          transform 0.15s,
+          box-shadow 0.15s;
+      }
+      .btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+      .btn:active {
+        transform: translateY(0);
+      }
+      .btn-red {
+        background: #e53e3e;
+        color: white;
+      }
+      .btn-green {
+        background: #38a169;
+        color: white;
+      }
+      .btn-blue {
+        background: #3182ce;
+        color: white;
+      }
+      .btn-reset {
+        background: #edf2f7;
+        color: #4a5568;
+      }
+      .status {
+        margin-top: 28px;
+        font-size: 0.85rem;
+        color: #a0aec0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Doi Mau Nen Trang Web</h1>
+      <p>Nhan vao mot trong cac nut ben duoi de thay doi mau nen</p>
+      <div class="btn-group">
+        <button class="btn btn-red" onclick="doiMauNen('red', 'Do')">
+          Red
+        </button>
+        <button class="btn btn-green" onclick="doiMauNen('green', 'Xanh la')">
+          Green
+        </button>
+        <button class="btn btn-blue" onclick="doiMauNen('blue', 'Xanh duong')">
+          Blue
+        </button>
+        <button
+          class="btn btn-reset"
+          onclick="doiMauNen('#f0f4f8', 'Mac dinh')"
+        >
+          Reset
+        </button>
+      </div>
+      <p class="status" id="status">Mau hien tai: Mac dinh</p>
+    </div>
+    <script>
+      function doiMauNen(mau, ten) {
+        document.body.style.backgroundColor = mau;
+        document.getElementById("status").textContent = "Mau hien tai: " + ten;
+      }
+    </script>
+  </body>
+</html>
