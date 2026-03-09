@@ -1,0 +1,3 @@
+- basically just upload my homeworks on this 
+- feel free to take it if u want tho
+- also have a nice day if ur reading this
