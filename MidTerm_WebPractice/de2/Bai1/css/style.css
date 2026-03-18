@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 960px;
+  margin: auto;
+  border: 2px solid #3aaed8;
+}
+
+/* ── Header ── */
+header {
+  width: 100%;
+  height: 100px;
+  background-color: rgb(2, 206, 233);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 3px dotted black;
+}
+
+header li {
+  margin: 20px;
+  display: inline;
+  list-style: none;
+}
+
+header a {
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+
+header a:hover {
+  color: red;
+}
+
+header h2 {
+  margin-left: 300px;
+  color: white;
+  -webkit-text-stroke: 0.5px blue;
+}
+
+/* ── Main ── */
+main {
+  width: 100%;
+  background-color: #5bc8f0;
+  padding: 20px;
+  display: flex;
+  border-bottom: 3px dotted black;
+}
+
+.leftmain {
+  width: 50%;
+  background-color: #5bc8f0;
+}
+
+.leftmain h1 {
+  color: #003d7a;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.leftmain p {
+  color: white;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  max-width: 640px;
+}
+
+/* ── Form grid: labels left, inputs right ── */
+.form-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: start;
+  gap: 10px 16px;
+  max-width: 640px;
+}
+
+.form-grid label {
+  color: #003d7a;
+  font-weight: bold;
+  font-size: 14px;
+  padding-top: 6px;
+  text-align: left;
+}
+
+.form-grid input,
+.form-grid select,
+.form-grid textarea {
+  width: 100%;
+  padding: 6px 10px;
+  border: 2px solid #3aaed8;
+  border-radius: 6px;
+  background-color: #e8f7fd;
+  color: #555;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-grid select {
+  width: auto;
+}
+
+.form-grid textarea {
+  height: 90px;
+  resize: vertical;
+}
+
+/* ── Buttons ── */
+.btn-row {
+  display: flex;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.btn-row button {
+  padding: 5px 18px;
+  border: 2px solid #888;
+  border-radius: 4px;
+  background-color: #d4eef8;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-row button:hover {
+  background-color: #aad8f0;
+}
+.rightmain {
+  width: 50%;
+  padding-left: 20px;
+}
+.rightmain h1 {
+  color: blue;
+  padding-top: 10px;
+  padding-left: 30px;
+}
+.rightmain h2 {
+  padding-left: 50px;
+  color: blue;
+}
+
+/* ── Footer ── */
+footer {
+  width: 100%;
+  height: 60px;
+  background-color: steelblue;
+  text-align: center;
+}
+footer li {
+  padding-top: 10px;
+  text-decoration: none;
+  list-style: none;
+}
