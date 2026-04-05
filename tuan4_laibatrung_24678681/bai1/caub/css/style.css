@@ -1,0 +1,26 @@
+body {
+  border: 2px solid #000;
+  margin: 8px;
+  min-height: calc(100vh - 16px);
+}
+
+/* Viền của khối container bên trong */
+.container {
+  padding: 5px;
+  margin-top: 24px !important;
+  margin-bottom: 24px;
+}
+
+/* Viền của từng ô ảnh (thumbnail) */
+.thumbnail {
+  border: 2px solid #000;
+  border-radius: 0;
+  padding: 5px;
+}
+
+/* Ảnh vuông đều */
+.thumbnail img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}

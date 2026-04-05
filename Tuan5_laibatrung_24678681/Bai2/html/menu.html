@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feane - Menu</title>
+    <link rel="icon" href="../images/favicon.png" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/fontawesome.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid px-4">
+        <a class="brand" href="../html/home.html">Feane</a>
+        <button
+          class="navbar-toggler border-secondary"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav mx-auto gap-1">
+            <li class="nav-item">
+              <a class="nav-link" href="../html/home.html">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="../html/menu.html">MENU</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../html/about.html">ABOUT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../html/book.html">BOOK TABLE</a>
+            </li>
+          </ul>
+          <div class="navbar-icons d-flex align-items-center me-3">
+            <a href="#"><i class="fa-regular fa-user"></i></a>
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+          </div>
+          <a href="../html/order.html" class="btn-order-online">Order Online</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="page-section">
+      <div class="container">
+        <h2 class="section-title">Our Menu</h2>
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">All</button>
+          <button class="filter-tab" data-filter="burger">Burger</button>
+          <button class="filter-tab" data-filter="pizza">Pizza</button>
+          <button class="filter-tab" data-filter="pasta">Pasta</button>
+          <button class="filter-tab" data-filter="fries">Fries</button>
+        </div>
+        <div class="row g-4" id="menuGrid">
+          <div class="col-md-4 menu-item" data-category="pizza">
+            <div class="menu-card">
+              <div class="menu-card-img">
+                <img src="../images/f1.png" alt="Delicious Pizza" />
+              </div>
+              <div class="menu-card-body">
+                <h5>Delicious Pizza</h5>
+                <p>
+                  Veniam debitis quaerat officis quasi cupiditate quo, quisquam
+                  velit, magnam voluptatem repellendus sed eaque.
+                </p>
+                <div class="menu-card-footer">
+                  <span class="menu-price">$20</span>
+                  <button class="btn-cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 menu-item" data-category="burger">
+            <div class="menu-card">
+              <div class="menu-card-img">
+                <img src="../images/f2.png" alt="Delicious Burger" />
+              </div>
+              <div class="menu-card-body">
+                <h5>Delicious Burger</h5>
+                <p>
+                  Veniam debitis quaerat officis quasi cupiditate quo, quisquam
+                  velit, magnam voluptatem repellendus sed eaque.
+                </p>
+                <div class="menu-card-footer">
+                  <span class="menu-price">$15</span>
+                  <button class="btn-cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 menu-item" data-category="pizza">
+            <div class="menu-card">
+              <div class="menu-card-img">
+                <img src="../images/f3.png" alt="Delicious Pizza" />
+              </div>
+              <div class="menu-card-body">
+                <h5>Delicious Pizza</h5>
+                <p>
+                  Veniam debitis quaerat officis quasi cupiditate quo, quisquam
+                  velit, magnam voluptatem repellendus sed eaque.
+                </p>
+                <div class="menu-card-footer">
+                  <span class="menu-price">$17</span>
+                  <button class="btn-cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 menu-item" data-category="fries">
+            <div class="menu-card">
+              <div class="menu-card-img">
+                <img src="../images/f4.png" alt="Crispy Fries" />
+              </div>
+              <div class="menu-card-body">
+                <h5>Crispy Fries</h5>
+                <p>
+                  Veniam debitis quaerat officis quasi cupiditate quo, quisquam
+                  velit, magnam voluptatem repellendus sed eaque.
+                </p>
+                <div class="menu-card-footer">
+                  <span class="menu-price">$8</span>
+                  <button class="btn-cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 menu-item" data-category="pasta">
+            <div class="menu-card">
+              <div class="menu-card-img">
+                <img src="../images/f5.png" alt="Pasta Special" />
+              </div>
+              <div class="menu-card-body">
+                <h5>Pasta Special</h5>
+                <p>
+                  Veniam debitis quaerat officis quasi cupiditate quo, quisquam
+                  velit, magnam voluptatem repellendus sed eaque.
+                </p>
+                <div class="menu-card-footer">
+                  <span class="menu-price">$12</span>
+                  <button class="btn-cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 menu-item" data-category="burger">
+            <div class="menu-card">
+              <div class="menu-card-img">
+                <img src="../images/f6.png" alt="Double Burger" />
+              </div>
+              <div class="menu-card-body">
+                <h5>Double Burger</h5>
+                <p>
+                  Veniam debitis quaerat officis quasi cupiditate quo, quisquam
+                  velit, magnam voluptatem repellendus sed eaque.
+                </p>
+                <div class="menu-card-footer">
+                  <span class="menu-price">$18</span>
+                  <button class="btn-cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.querySelectorAll(".filter-tab").forEach((tab) => {
+        tab.addEventListener("click", function () {
+          document
+            .querySelectorAll(".filter-tab")
+            .forEach((t) => t.classList.remove("active"));
+          this.classList.add("active");
+          const filter = this.dataset.filter;
+          document.querySelectorAll(".menu-item").forEach((item) => {
+            item.style.display =
+              filter === "all" || item.dataset.category === filter
+                ? ""
+                : "none";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

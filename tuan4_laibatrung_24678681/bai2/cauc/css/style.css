@@ -1,0 +1,85 @@
+body {
+  background: #f0f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px 16px;
+}
+
+.form-card {
+  background: #fff;
+  border: 1.5px solid #b3d4f5;
+  border-radius: 10px;
+  padding: 28px;
+  width: 100%;
+  max-width: 660px;
+}
+
+.form-card h5 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1.5px solid #e9ecef;
+}
+
+.form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  font-size: 13px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  padding: 9px 12px;
+}
+
+.form-control::placeholder {
+  color: #adb5bd;
+}
+
+.form-check-inline .form-check-label {
+  font-size: 13px;
+  color: #333;
+}
+
+.or-text {
+  font-size: 13px;
+  color: #666;
+  line-height: 38px;
+}
+
+.btn-signup {
+  background: #00b8d4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 9px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-signup:hover {
+  background: #0097a7;
+}
+
+.btn-facebook {
+  background: #1877f2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 9px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-facebook:hover {
+  background: #1558b0;
+}

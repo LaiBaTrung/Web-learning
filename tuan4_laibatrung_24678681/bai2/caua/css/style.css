@@ -1,0 +1,156 @@
+body {
+  background: #e8f0fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.payment-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1.5px solid #b3cfff;
+  padding: 32px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 4px 24px rgba(66, 133, 244, 0.08);
+}
+
+/* ── Checkout Table ── */
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 16px;
+  border-bottom: 1.5px solid #e0e0e0;
+}
+
+.checkout-table {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.checkout-table td {
+  padding: 10px 0;
+  border: none;
+  font-size: 14px;
+  color: #444;
+}
+
+.checkout-table .product-name {
+  font-weight: 700;
+  color: #1a1a2e;
+  font-size: 15px;
+}
+
+.checkout-table .product-desc {
+  color: #9aa0ac;
+  font-size: 12px;
+}
+
+.checkout-table .price {
+  text-align: right;
+  font-weight: 600;
+  color: #1a1a2e;
+  white-space: nowrap;
+}
+
+.checkout-table .total-row td {
+  border-top: 1.5px solid #e0e0e0;
+  font-weight: 700;
+  font-size: 15px;
+  color: #1a1a2e;
+  padding-top: 14px;
+}
+
+.divider {
+  border: none;
+  border-top: 1.5px solid #e9ecef;
+  margin: 24px 0;
+}
+
+/* ── Credit Card Form ── */
+.form-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #9aa0ac;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.form-control {
+  border: 1.5px solid #d0d7e2;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #495057;
+  padding: 10px 14px;
+  transition: border-color 0.2s;
+}
+
+.form-control:focus {
+  border-color: #2979ff;
+  box-shadow: 0 0 0 3px rgba(41, 121, 255, 0.12);
+}
+
+.form-control::placeholder {
+  color: #c0c7d0;
+}
+
+/* Expiration date: MM / YY */
+.expiry-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.expiry-group .form-control {
+  text-align: center;
+  width: 64px;
+  flex-shrink: 0;
+}
+
+.expiry-group .separator {
+  font-size: 18px;
+  color: #9aa0ac;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.expiry-group .form-control.yy {
+  border-color: #2979ff;
+  box-shadow: 0 0 0 3px rgba(41, 121, 255, 0.12);
+}
+
+/* Proceed button */
+.btn-proceed {
+  background: #2979ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-top: 24px;
+  transition:
+    background 0.2s,
+    transform 0.1s;
+}
+
+.btn-proceed:hover {
+  background: #1a5fe0;
+  transform: translateY(-1px);
+}
+
+.btn-proceed:active {
+  transform: translateY(0);
+}

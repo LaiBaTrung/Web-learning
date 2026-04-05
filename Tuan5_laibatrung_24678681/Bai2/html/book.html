@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feane - Book A Table</title>
+    <link rel="icon" href="../images/favicon.png" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/fontawesome.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid px-4">
+        <a class="brand" href="../html/home.html">Feane</a>
+        <button
+          class="navbar-toggler border-secondary"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav mx-auto gap-1">
+            <li class="nav-item">
+              <a class="nav-link" href="../html/home.html">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../html/menu.html">MENU</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../html/about.html">ABOUT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="../html/book.html">BOOK TABLE</a>
+            </li>
+          </ul>
+          <div class="navbar-icons d-flex align-items-center me-3">
+            <a href="#"><i class="fa-regular fa-user"></i></a>
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+          </div>
+          <a href="../html/order.html" class="btn-order-online">Order Online</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="book-section">
+      <div class="container">
+        <h2 class="book-title">Book A Table</h2>
+        <div class="row g-4 align-items-start">
+          <div class="col-md-6">
+            <div class="book-form">
+              <input type="text" class="form-control" placeholder="Your Name" />
+              <input
+                type="tel"
+                class="form-control"
+                placeholder="Phone Number"
+              />
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Your Email"
+              />
+              <select class="form-select">
+                <option value="" disabled selected>How many persons?</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5+</option>
+              </select>
+              <input
+                type="date"
+                class="form-control"
+                placeholder="dd/mm/yyyy"
+              />
+              <button class="btn-book mt-2">BOOK NOW</button>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <img src="../images/map.png" alt="Location Map" class="map-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

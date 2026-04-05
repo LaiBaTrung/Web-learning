@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="payment-card">
+      <!-- ── CHECKOUT TABLE ── -->
+      <div class="section-title">Checkout</div>
+
+      <table class="checkout-table">
+        <tbody>
+          <!-- Product 1 -->
+          <tr>
+            <td>
+              <div class="product-name">Product 1</div>
+              <div class="product-desc">Lorem ipsum dolor sit amet</div>
+            </td>
+            <td class="price">$200</td>
+          </tr>
+
+          <!-- Product 2 -->
+          <tr>
+            <td>
+              <div class="product-name">Product 2</div>
+              <div class="product-desc">Lorem ipsum dolor sit amet</div>
+            </td>
+            <td class="price">$120</td>
+          </tr>
+
+          <!-- Total -->
+          <tr class="total-row">
+            <td>Total</td>
+            <td class="price">$320</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="divider" />
+
+      <!-- ── CREDIT CARD FORM ── -->
+      <div class="form-title">Credit Card Details</div>
+
+      <div class="row g-3">
+        <!-- Card Holder -->
+        <div class="col-7">
+          <label class="form-label">Card Holder</label>
+          <input type="text" class="form-control" placeholder="Card Holder" />
+        </div>
+
+        <!-- Expiration Date -->
+        <div class="col-5">
+          <label class="form-label">Expiration Date</label>
+          <div class="expiry-group">
+            <input
+              type="datetime"
+              class="form-control"
+              placeholder="MM"
+              maxlength="2"
+            />
+            <span class="separator">/</span>
+            <input
+              type="datetime"
+              class="form-control yy"
+              placeholder="YY"
+              maxlength="2"
+            />
+          </div>
+        </div>
+
+        <!-- Card Number -->
+        <div class="col-7">
+          <label class="form-label">Card Number</label>
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Card Number"
+            maxlength="19"
+          />
+        </div>
+
+        <!-- CVC -->
+        <div class="col-5">
+          <label class="form-label">CVC</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="CVC"
+            maxlength="4"
+          />
+        </div>
+      </div>
+
+      <!-- Proceed Button -->
+      <button class="btn-proceed">Proceed</button>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

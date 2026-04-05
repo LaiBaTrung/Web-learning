@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css">
+  </head>
+  <body>
+
+    <!-- ── NAVBAR ── -->
+    <nav class="navbar navbar-expand-lg">
+
+      <!-- Search form (luôn hiển thị) -->
+      <div class="d-flex align-items-center">
+        <input type="text" class="form-control" placeholder="Search" />
+        <button class="btn-search">Search</button>
+      </div>
+
+      <!-- Hamburger button (hiện khi màn hình nhỏ) -->
+      <button
+        class="navbar-toggler ms-auto"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarMenu"
+        aria-controls="navbarMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Nav links (ẩn khi màn hình nhỏ, hiện khi nhấn hamburger) -->
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+
+          <!-- Dropdown: Products -->
+         
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Engineering</a></li>
+              <li><a class="dropdown-item" href="#">Telecom</a></li>
+              <li><a class="dropdown-item" href="#">Energy</a></li>
+              <li><a class="dropdown-item" href="#">Finace</a></li>
+              <li><a class="dropdown-item" href="#">Consultancy</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ── NỘI DUNG TRANG ── -->
+    <div class="main-content"></div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

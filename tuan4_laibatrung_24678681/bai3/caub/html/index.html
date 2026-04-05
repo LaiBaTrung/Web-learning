@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- Nút mở Modal -->
+    <button class="btn-open" data-bs-toggle="modal" data-bs-target="#authModal">
+      Đăng nhập / Đăng ký
+    </button>
+
+    <!-- ── MODAL ── -->
+    <div class="modal fade" id="authModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" style="max-width: 420px">
+        <div class="modal-content border-0 rounded-3 p-4">
+          <!-- Close -->
+          <div class="d-flex justify-content-end mb-1">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <!-- Tab buttons -->
+          <div class="modal-tabs">
+            <button
+              class="tab-btn"
+              id="tabDangNhap"
+              onclick="showTab('dangnhap')"
+            >
+              ĐĂNG NHẬP
+            </button>
+            <span class="divider">/</span>
+            <button class="tab-btn" id="tabDangKy" onclick="showTab('dangky')">
+              ĐĂNG KÝ
+            </button>
+          </div>
+
+          <!-- ── Carousel ── -->
+          <div id="authCarousel" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner">
+              <!-- SLIDE 1: ĐĂNG NHẬP -->
+              <div class="carousel-item active" id="slideDangNhap">
+                <p class="desc-text">
+                  Vui lòng đăng nhập trước khi mua vé để tích luỹ điểm, cơ hội
+                  nhận thêm nhiều ưu đãi từ chương trình thành viên Galaxy
+                  Cinema.
+                </p>
+                <div class="d-flex flex-column gap-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Email"
+                  />
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Mật khẩu"
+                  />
+                  <a href="#" class="forgot-link">Quên mật khẩu?</a>
+                  <button class="btn-submit">ĐĂNG NHẬP</button>
+                </div>
+              </div>
+
+              <!-- SLIDE 2: ĐĂNG KÝ -->
+              <div class="carousel-item" id="slideDangKy">
+                <div class="d-flex flex-column gap-2">
+                  <!-- Họ tên -->
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Họ tên"
+                  />
+
+                  <!-- Số điện thoại + Giới tính -->
+                  <div class="row g-2">
+                    <div class="col-6">
+                      <input
+                        type="tel"
+                        class="form-control"
+                        placeholder="Số điện thoại"
+                      />
+                    </div>
+                    <div class="col-6">
+                      <select class="form-select">
+                        <option value="" selected disabled>
+                          Chọn giới tính
+                        </option>
+                        <option>Nam</option>
+                        <option>Nữ</option>
+                        <option>Khác</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Email -->
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Email"
+                  />
+
+                  <!-- Mật khẩu + Xác nhận -->
+                  <div class="row g-2">
+                    <div class="col-6">
+                      <input
+                        type="password"
+                        class="form-control"
+                        placeholder="Mật khẩu"
+                      />
+                    </div>
+                    <div class="col-6">
+                      <input
+                        type="password"
+                        class="form-control"
+                        placeholder="Xác nhận mật khẩu"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Thành phố + Quận -->
+                  <div class="row g-2">
+                    <div class="col-6">
+                      <select class="form-select">
+                        <option value="" selected disabled>
+                          Chọn thành phố
+                        </option>
+                        <option>Hồ Chí Minh</option>
+                        <option>Hà Nội</option>
+                        <option>Đà Nẵng</option>
+                      </select>
+                    </div>
+                    <div class="col-6">
+                      <select class="form-select">
+                        <option value="" selected disabled>Quận</option>
+                        <option>Quận 1</option>
+                        <option>Quận 2</option>
+                        <option>Quận 3</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Địa chỉ -->
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Địa chỉ"
+                  />
+
+                  <!-- Ngày sinh -->
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Chọn ngày (dd/mm/yyyy)"
+                    />
+                    <span
+                      class="input-group-text"
+                      style="font-size: 16px; color: #aaa"
+                      >📅</span
+                    >
+                  </div>
+
+                  <!-- Captcha -->
+                  <div class="row g-2 align-items-center">
+                    <div class="col-auto">
+                      <span class="captcha-box" id="captchaText">352176</span>
+                    </div>
+                    <div class="col-auto">
+                      <button
+                        class="btn-refresh"
+                        onclick="refreshCaptcha()"
+                        title="Làm mới"
+                      >
+                        ↻
+                      </button>
+                    </div>
+                    <div class="col">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Nhập mã captcha"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Policy -->
+                  <p class="policy-text mb-1">
+                    Tôi đã đọc và đồng ý với
+                    <a href="#">CHÍNH SÁCH</a>
+                    của chương trình.
+                  </p>
+
+                  <button class="btn-submit">ĐĂNG KÝ</button>
+                </div>
+              </div>
+            </div>
+            <!-- /.carousel-inner -->
+          </div>
+          <!-- /#authCarousel -->
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Mặc định active tab Đăng nhập
+      showTab("dangnhap");
+
+      function showTab(tab) {
+        const carousel = bootstrap.Carousel.getOrCreateInstance(
+          document.getElementById("authCarousel"),
+          { interval: false, wrap: false },
+        );
+
+        const btnDN = document.getElementById("tabDangNhap");
+        const btnDK = document.getElementById("tabDangKy");
+
+        if (tab === "dangnhap") {
+          carousel.to(0);
+          btnDN.classList.add("active");
+          btnDK.classList.remove("active");
+        } else {
+          carousel.to(1);
+          btnDK.classList.add("active");
+          btnDN.classList.remove("active");
+        }
+      }
+
+      // Refresh captcha
+      function refreshCaptcha() {
+        const num = Math.floor(100000 + Math.random() * 900000);
+        document.getElementById("captchaText").textContent = num;
+      }
+    </script>
+  </body>
+</html>

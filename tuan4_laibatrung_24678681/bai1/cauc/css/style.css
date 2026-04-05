@@ -1,0 +1,132 @@
+body {
+  background: #f0f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.card-table {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  width: 100%;
+  max-width: 860px;
+}
+
+/* Table */
+.table thead th {
+  font-weight: 500;
+  color: #9aa0ac;
+  font-size: 13px;
+  border-bottom: 1px solid #e9ecef;
+  border-top: none;
+  padding-bottom: 12px;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #f1f3f5;
+  transition: background 0.2s ease;
+}
+
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background: #f8f9ff;
+}
+
+.table td {
+  vertical-align: middle;
+  padding: 16px 12px;
+}
+
+/* Avatar */
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e9ecef;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+/* Name + secondary text */
+.name-block .name {
+  font-weight: 600;
+  font-size: 15px;
+  color: #212529;
+  margin-bottom: 2px;
+}
+
+.name-block .email {
+  font-size: 12px;
+  color: #9aa0ac;
+}
+
+/* Title block */
+.title-block .job {
+  font-size: 14px;
+  color: #495057;
+  margin-bottom: 2px;
+}
+
+.title-block .dept {
+  font-size: 12px;
+  color: #9aa0ac;
+}
+
+/* Badges */
+.badge-active {
+  background: #d4edda;
+  color: #1a7f3c;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.badge-onboarding {
+  background: #cce5ff;
+  color: #1a5fa8;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.badge-awaiting {
+  background: #fff3cd;
+  color: #a07800;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+/* Edit button */
+.btn-edit {
+  font-size: 12px;
+  font-weight: 700;
+  color: #4a90e2;
+  background: none;
+  border: none;
+  padding: 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.btn-edit:hover {
+  color: #1a5fa8;
+  text-decoration: underline;
+}
