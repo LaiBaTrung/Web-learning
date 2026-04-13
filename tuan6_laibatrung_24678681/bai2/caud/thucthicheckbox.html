@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Form Định Dạng</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 30px;
+        background: #fff;
+      }
+
+      .khung {
+        border: 1px solid #999;
+        padding: 16px 20px 20px 20px;
+        display: inline-block;
+        min-width: 460px;
+        max-width: 520px;
+      }
+
+      .tieude {
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 12px;
+      }
+
+      .dong {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        font-size: 13px;
+      }
+
+      .nhan {
+        width: 110px;
+        text-align: right;
+        margin-right: 6px;
+        font-size: 13px;
+      }
+
+      input[type="text"] {
+        border: 1px solid #999;
+        padding: 3px 5px;
+        font-size: 13px;
+        width: 180px;
+      }
+
+      select {
+        font-size: 13px;
+        padding: 2px 4px;
+        border: 1px solid #999;
+      }
+
+      .dong-btn {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+
+      button {
+        padding: 3px 14px;
+        font-size: 13px;
+        cursor: pointer;
+        border: 1px solid #999;
+        background: #f0f0f0;
+      }
+
+      button:hover {
+        background: #ddd;
+      }
+
+      #vanbannhan {
+        font-size: 13px;
+        line-height: 1.6;
+        padding: 8px;
+        border: none;
+        border-top: 1px solid #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="khung">
+      <div class="tieude">FORM ĐỊNH DẠNG</div>
+
+      <div class="dong">
+        <span class="nhan">Họ và tên</span>
+        <input type="text" id="hoten" />
+      </div>
+
+      <div class="dong">
+        <span class="nhan">Chọn</span>
+        <label style="margin-right: 12px">
+          <input type="radio" name="loai" value="background" checked />
+          Background
+        </label>
+        <label> <input type="radio" name="loai" value="font" /> Font </label>
+      </div>
+
+      <div class="dong">
+        <span class="nhan">Chọn màu</span>
+        <select id="mausac">
+          <option value="">Chọn màu ...</option>
+          <option value="red">Đỏ (Red)</option>
+          <option value="blue">Xanh dương (Blue)</option>
+          <option value="green">Xanh lá (Green)</option>
+          <option value="yellow">Vàng (Yellow)</option>
+          <option value="orange">Cam (Orange)</option>
+          <option value="pink">Hồng (Pink)</option>
+          <option value="purple">Tím (Purple)</option>
+          <option value="gray">Xám (Gray)</option>
+          <option value="black">Đen (Black)</option>
+          <option value="white">Trắng (White)</option>
+        </select>
+      </div>
+
+      <div class="dong-btn">
+        <button onclick="doiMau()">Đổi màu</button>
+        <button onclick="cancel()">Cacel</button>
+      </div>
+
+      <div id="vanbannhan">
+        you can direct link the hyperlink with the file if you know the address
+        but this is limited by the browser. eg. if pdf reader is installed on
+        the client then the pdf will not be downloaded instead it will be shown.
+        A good solution would be to have a seperate page for downloading files.
+        just pass filename in querystring and in the pageload event just output
+        the file in response stream. This way you can use url say dwnld.aspx?
+        filename.ext
+      </div>
+    </div>
+
+    <script>
+      function doiMau() {
+        var mau = document.getElementById("mausac").value;
+        var loai = document.querySelector("input[name='loai']:checked").value;
+        var vanban = document.getElementById("vanbannhan");
+
+        if (mau === "") {
+          alert("Vui lòng chọn màu!");
+          return;
+        }
+
+        if (loai === "background") {
+          vanban.style.backgroundColor = mau;
+        } else {
+          vanban.style.color = mau;
+        }
+      }
+
+      function cancel() {
+        document.getElementById("hoten").value = "";
+        document.getElementById("mausac").value = "";
+        document.querySelector(
+          "input[name='loai'][value='background']",
+        ).checked = true;
+
+        var vanban = document.getElementById("vanbannhan");
+        vanban.style.backgroundColor = "";
+        vanban.style.color = "";
+      }
+    </script>
+  </body>
+</html>

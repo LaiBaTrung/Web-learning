@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 3 - Đổi Hình Ngẫu Nhiên</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 20px 30px;
+        border-radius: 6px;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        max-width: 500px;
+        width: 100%;
+      }
+
+      h2 {
+        font-size: 18px;
+        margin-bottom: 6px;
+        color: #222;
+      }
+
+      p {
+        font-size: 14px;
+        color: #444;
+        margin-bottom: 16px;
+      }
+
+      .frame {
+        border: 2px solid #999;
+        padding: 8px;
+        display: inline-block;
+        background: #eee;
+        border-radius: 4px;
+        margin-bottom: 12px;
+      }
+
+      #hinh {
+        width: 380px;
+        height: 280px;
+        object-fit: cover;
+        display: block;
+        border-radius: 2px;
+      }
+
+      .btn-group {
+        margin-top: 10px;
+      }
+
+      button {
+        padding: 6px 20px;
+        margin: 0 4px;
+        font-size: 14px;
+        cursor: pointer;
+        border: 1px solid #888;
+        border-radius: 3px;
+        background-color: #e8e8e8;
+      }
+
+      button:hover {
+        background-color: #d0d0d0;
+      }
+
+      button:active {
+        background-color: #bbb;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Bài 3. Sử dụng Array thực hiện form đổi hình ngẫu nhiên</h2>
+      <p>
+        Nhấn <strong>Play</strong> để bắt đầu đổi hình ngẫu nhiên. Nhấn
+        <strong>Stop</strong> để dừng lại.
+      </p>
+
+      <div class="frame">
+        <img id="hinh" src="../img/guga.png" alt="Hình ảnh" />
+      </div>
+
+      <div class="btn-group">
+        <button onclick="play()">Play</button>
+        <button onclick="stop()">Stop</button>
+      </div>
+    </div>
+
+    <script>
+      // Mảng chứa danh sách các tập hình
+      var danhSachHinh = [
+        "../img/guga.png",
+        "../img/guga1.jpg",
+        "../img/Kayoko.png",
+        "../img/Onikata-Kayoko.jpg",
+        "../img/Seia.jpg",
+      ];
+
+      var timer = null; // Lưu ID của setTimeout
+
+      function doiHinhNgauNhien() {
+        // Chọn chỉ số ngẫu nhiên từ mảng
+        var chiSo = Math.floor(Math.random() * danhSachHinh.length);
+        document.getElementById("hinh").src = danhSachHinh[chiSo];
+
+        // Gọi lại sau 1 giây
+        timer = setTimeout(doiHinhNgauNhien, 1000);
+      }
+
+      function play() {
+        if (timer === null) {
+          doiHinhNgauNhien();
+        }
+      }
+
+      function stop() {
+        if (timer !== null) {
+          clearTimeout(timer);
+          timer = null;
+        }
+      }
+    </script>
+  </body>
+</html>

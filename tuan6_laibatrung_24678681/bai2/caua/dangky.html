@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Đăng Ký</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 30px;
+        background: #fff;
+      }
+
+      table {
+        border-collapse: collapse;
+        border: 1px solid #999;
+      }
+
+      table th.tieude {
+        color: #cc3333;
+        font-size: 15px;
+        text-align: center;
+        padding: 6px 20px;
+        border-bottom: 1px solid #999;
+      }
+
+      table td {
+        padding: 4px 8px;
+        font-size: 13px;
+        border: none;
+      }
+
+      table td input[type="text"],
+      table td input[type="password"] {
+        border: 1px solid #999;
+        padding: 2px 4px;
+        font-size: 13px;
+        width: 130px;
+      }
+
+      table td input[type="submit"] {
+        padding: 2px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+
+      .btn-row {
+        text-align: center;
+        padding: 6px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th colspan="2" class="tieude">THÔNG TIN ĐĂNG KÝ</th>
+      </tr>
+      <tr>
+        <td>Họ tên</td>
+        <td><input type="text" id="hoten" placeholder="" /></td>
+      </tr>
+      <tr>
+        <td>Mật khẩu</td>
+        <td><input type="password" id="matkhau" placeholder="" /></td>
+      </tr>
+      <tr>
+        <td colspan="2" class="btn-row">
+          <input type="submit" value="Nhập" onclick="dangKy()" />
+        </td>
+      </tr>
+    </table>
+
+    <script>
+      function dangKy() {
+        var hoten = document.getElementById("hoten").value.trim();
+        var matkhau = document.getElementById("matkhau").value.trim();
+
+        if (hoten === "") {
+          alert("Vui lòng nhập họ tên!");
+          return;
+        }
+        if (matkhau === "") {
+          alert("Vui lòng nhập mật khẩu!");
+          return;
+        }
+
+        var url =
+          "dangnhap.html?username=" +
+          encodeURIComponent(hoten) +
+          "&password=" +
+          encodeURIComponent(matkhau);
+        window.location.href = url;
+      }
+    </script>
+  </body>
+</html>

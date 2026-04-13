@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Phép Tính Cơ Bản</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 30px;
+        background: #fff;
+      }
+
+      .khung {
+        border: 1px solid #999;
+        padding: 16px 24px 20px 24px;
+        display: inline-block;
+        min-width: 500px;
+      }
+
+      .tieude {
+        text-align: center;
+        font-size: 15px;
+        font-weight: normal;
+        margin-bottom: 12px;
+      }
+
+      .dong {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+
+      .nhan {
+        width: 110px;
+        font-size: 13px;
+      }
+
+      .nhan-ketqua {
+        width: 110px;
+        font-size: 13px;
+      }
+
+      input[type="text"] {
+        border: 1px solid #999;
+        padding: 3px 5px;
+        font-size: 13px;
+        width: 200px;
+      }
+
+      input[type="text"]:read-only {
+        background: #f5f5f5;
+        width: 200px;
+      }
+
+      .loi {
+        color: #cc0000;
+        font-size: 12px;
+        margin-left: 6px;
+      }
+
+      .dong-btn {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-bottom: 8px;
+        margin-left: 110px;
+      }
+
+      button {
+        padding: 3px 10px;
+        font-size: 13px;
+        cursor: pointer;
+        border: 1px solid #999;
+        background: #f0f0f0;
+      }
+
+      button:hover {
+        background: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="khung">
+      <div class="tieude">PHÉP TÍNH CƠ BẢN</div>
+
+      <div class="dong">
+        <span class="nhan">Nhập số thứ 1</span>
+        <input type="text" id="so1" />
+        <span class="loi" id="loi1"></span>
+      </div>
+
+      <div class="dong">
+        <span class="nhan">Nhập số thứ 2</span>
+        <input type="text" id="so2" />
+        <span class="loi" id="loi2"></span>
+      </div>
+
+      <div class="dong-btn">
+        <button onclick="tinh('cong')">Cộng</button>
+        <button onclick="tinh('tru')">Trừ</button>
+        <button onclick="tinh('nhan')">Nhân</button>
+        <button onclick="tinh('chia')">Chia</button>
+        <button onclick="tinh('chiaду')">Chia dư</button>
+      </div>
+
+      <div class="dong">
+        <span class="nhan-ketqua">Kết quả</span>
+        <input type="text" id="ketqua" readonly />
+      </div>
+    </div>
+
+    <script>
+      function kiemTra() {
+        var s1 = document.getElementById("so1").value.trim();
+        var s2 = document.getElementById("so2").value.trim();
+        var l1 = document.getElementById("loi1");
+        var l2 = document.getElementById("loi2");
+
+        var ok = true;
+
+        if (s1 === "" || isNaN(s1)) {
+          l1.textContent = "(*) quên nhập kìa ní";
+          ok = false;
+        } else {
+          l1.textContent = "";
+        }
+
+        if (s2 === "" || isNaN(s2)) {
+          l2.textContent = "(*) quên nhập kìa ní";
+          ok = false;
+        } else {
+          l2.textContent = "";
+        }
+
+        return ok;
+      }
+
+      function tinh(phep) {
+        if (!kiemTra()) {
+          document.getElementById("ketqua").value = "";
+          return;
+        }
+
+        var a = parseFloat(document.getElementById("so1").value);
+        var b = parseFloat(document.getElementById("so2").value);
+        var kq;
+
+        if (phep === "cong") {
+          kq = a + b;
+        } else if (phep === "tru") {
+          kq = a - b;
+        } else if (phep === "nhan") {
+          kq = a * b;
+        } else if (phep === "chia") {
+          if (b === 0) {
+            document.getElementById("ketqua").value =
+              "Lỗi: Không chia được cho 0";
+            return;
+          }
+          kq = a / b;
+        } else if (phep === "chiaду") {
+          if (b === 0) {
+            document.getElementById("ketqua").value =
+              "Lỗi: Không chia được cho 0";
+            return;
+          }
+          kq = a % b;
+        }
+
+        document.getElementById("ketqua").value = kq;
+      }
+    </script>
+  </body>
+</html>

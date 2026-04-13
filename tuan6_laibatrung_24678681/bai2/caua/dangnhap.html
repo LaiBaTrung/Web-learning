@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Đăng Nhập</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 30px;
+        background: #fff;
+      }
+
+      table {
+        border-collapse: collapse;
+        border: 1px solid #999;
+        min-width: 280px;
+      }
+
+      table th.tieude {
+        color: #cc3333;
+        font-size: 16px;
+        text-align: center;
+        padding: 8px 20px;
+        border-bottom: 1px solid #999;
+      }
+
+      table td {
+        padding: 5px 12px;
+        font-size: 13px;
+        border: 1px solid #999;
+      }
+
+      table td:first-child {
+        font-weight: bold;
+        background: #f9f9f9;
+        width: 90px;
+      }
+
+      .back-link {
+        margin-top: 14px;
+        display: inline-block;
+        font-size: 13px;
+        color: #1a6bb5;
+        text-decoration: none;
+      }
+
+      .back-link:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th colspan="2" class="tieude">THÔNG TIN ĐĂNG NHẬP</th>
+      </tr>
+      <tr>
+        <td>UserName</td>
+        <td id="showUser">YourName</td>
+      </tr>
+      <tr>
+        <td>PassWord</td>
+        <td id="showPass">YourPWD</td>
+      </tr>
+    </table>
+
+    <br />
+    <a class="back-link" href="dangky.html">&larr; Quay lại đăng ký</a>
+
+    <script>
+      function getParam(name) {
+        var params = new URLSearchParams(window.location.search);
+        return params.get(name);
+      }
+
+      var username = getParam("username");
+      var password = getParam("password");
+
+      if (username) {
+        document.getElementById("showUser").textContent = username;
+      }
+      if (password) {
+        document.getElementById("showPass").textContent = password;
+      }
+    </script>
+  </body>
+</html>

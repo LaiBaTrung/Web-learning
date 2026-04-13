@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Register Form</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 13px;
+        background: #f0f0f0;
+        padding: 30px;
+      }
+
+      .form-wrapper {
+        max-width: 560px;
+        margin: 0 auto;
+        border: 1px solid #a0c0a0;
+        background: #e8f5e8;
+      }
+
+      .form-title {
+        text-align: center;
+        padding: 6px;
+        font-size: 14px;
+        color: #003399;
+        border-bottom: 1px solid #a0c0a0;
+        background: #d8ecd8;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      td {
+        border: 1px solid #a0c0a0;
+        padding: 5px 8px;
+      }
+
+      td.label {
+        text-align: right;
+        width: 45%;
+        color: #003399;
+        background: #e8f5e8;
+        white-space: nowrap;
+      }
+
+      td.field {
+        background: #fff;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        width: 200px;
+        padding: 2px 4px;
+        border: 1px solid #999;
+        font-size: 13px;
+      }
+
+      input[type="number"] {
+        width: 55px;
+        padding: 2px 4px;
+        border: 1px solid #999;
+        font-size: 13px;
+        text-align: center;
+      }
+
+      select {
+        padding: 2px 4px;
+        border: 1px solid #999;
+        font-size: 13px;
+      }
+
+      .ngay-sinh {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: nowrap;
+      }
+
+      .ngay-sinh label {
+        color: #333;
+      }
+
+      .btn-row {
+        text-align: center;
+        padding: 8px;
+        border-top: 1px solid #a0c0a0;
+        background: #e8f5e8;
+      }
+
+      button {
+        padding: 4px 16px;
+        margin: 0 4px;
+        font-size: 13px;
+        border: 1px solid #666;
+        background: #dde6ff;
+        cursor: pointer;
+        border-radius: 2px;
+      }
+
+      button:hover {
+        background: #c0ccee;
+      }
+
+      /* Highlight lỗi */
+      input.error {
+        border: 2px solid red;
+        background: #fff0f0;
+      }
+
+      .err-msg {
+        color: red;
+        font-size: 11px;
+        display: block;
+        margin-top: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-wrapper">
+      <div class="form-title">Register Form</div>
+
+      <table>
+        <tr>
+          <td class="label">Họ và tên (*) :</td>
+          <td class="field">
+            <input type="text" id="hovaten" />
+            <span class="err-msg" id="err-hovaten"></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="label">Tên Đăng nhập (*) :</td>
+          <td class="field">
+            <input type="text" id="tendangnhap" />
+            <span class="err-msg" id="err-tendangnhap"></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="label">Mật khẩu (*) :</td>
+          <td class="field">
+            <input type="password" id="matkhau" />
+            <span class="err-msg" id="err-matkhau"></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="label">Xác nhận mật khẩu (*) :</td>
+          <td class="field">
+            <input type="password" id="xacnhan" />
+            <span class="err-msg" id="err-xacnhan"></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="label">Ngày sinh:</td>
+          <td class="field">
+            <div class="ngay-sinh">
+              <input type="number" id="ngay" value="1" min="1" max="31" />
+              <label>Tháng:</label>
+              <input type="number" id="thang" value="1" min="1" max="12" />
+              <label>Năm:</label>
+              <input
+                type="number"
+                id="nam"
+                value="1940"
+                min="1900"
+                max="2099"
+                style="width: 70px"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="label">Điện thoại:</td>
+          <td class="field">
+            <input type="text" id="dienthoai" />
+            <span class="err-msg" id="err-dienthoai"></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="label">Địa chỉ:</td>
+          <td class="field">
+            <input type="text" id="diachi" />
+          </td>
+        </tr>
+        <tr>
+          <td class="label">Email khác:</td>
+          <td class="field">
+            <input type="text" id="email" />
+            <span class="err-msg" id="err-email"></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="label">Sở thích:</td>
+          <td class="field">
+            <select id="sothich">
+              <option value="Ca Nhạc">Ca Nhạc</option>
+              <option value="Thể thao">Thể thao</option>
+              <option value="Du lịch">Du lịch</option>
+              <option value="Đọc sách">Đọc sách</option>
+              <option value="Nấu ăn">Nấu ăn</option>
+              <option value="Chụp ảnh">Chụp ảnh</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+
+      <div class="btn-row">
+        <button onclick="dangKy()">Dang Ky</button>
+        <button onclick="huy()">Huy</button>
+      </div>
+    </div>
+
+    <script>
+      // Focus vào Họ và tên khi load
+      window.onload = function () {
+        document.getElementById("hovaten").focus();
+      };
+
+      // Xóa tất cả lỗi
+      function clearErrors() {
+        var ids = [
+          "hovaten",
+          "tendangnhap",
+          "matkhau",
+          "xacnhan",
+          "dienthoai",
+          "email",
+        ];
+        ids.forEach(function (id) {
+          var el = document.getElementById(id);
+          el.classList.remove("error");
+          document.getElementById("err-" + id).textContent = "";
+        });
+      }
+
+      // Đặt lỗi
+      function setError(id, msg) {
+        var el = document.getElementById(id);
+        el.classList.add("error");
+        document.getElementById("err-" + id).textContent = msg;
+        return el;
+      }
+
+      function dangKy() {
+        clearErrors();
+
+        var hovaten = document.getElementById("hovaten").value.trim();
+        var tendangnhap = document.getElementById("tendangnhap").value.trim();
+        var matkhau = document.getElementById("matkhau").value;
+        var xacnhan = document.getElementById("xacnhan").value;
+        var ngay = document.getElementById("ngay").value;
+        var thang = document.getElementById("thang").value;
+        var nam = document.getElementById("nam").value;
+        var dienthoai = document.getElementById("dienthoai").value.trim();
+        var diachi = document.getElementById("diachi").value.trim();
+        var email = document.getElementById("email").value.trim();
+        var sothich = document.getElementById("sothich").value;
+
+        var firstError = null;
+
+        // 1. Họ và tên bắt buộc
+        if (hovaten === "") {
+          var el = setError("hovaten", "Vui lòng nhập họ và tên!");
+          if (!firstError) firstError = el;
+        }
+
+        // 2. Tên đăng nhập bắt buộc và ít nhất 6 ký tự
+        if (tendangnhap === "") {
+          var el = setError("tendangnhap", "Vui lòng nhập tên đăng nhập!");
+          if (!firstError) firstError = el;
+        } else if (tendangnhap.length < 6) {
+          var el = setError(
+            "tendangnhap",
+            "Tên đăng nhập phải ít nhất 6 ký tự!",
+          );
+          if (!firstError) firstError = el;
+        }
+
+        // 3. Mật khẩu bắt buộc
+        if (matkhau === "") {
+          var el = setError("matkhau", "Vui lòng nhập mật khẩu!");
+          if (!firstError) firstError = el;
+        }
+
+        // 4. Xác nhận mật khẩu bắt buộc và phải trùng
+        if (xacnhan === "") {
+          var el = setError("xacnhan", "Vui lòng xác nhận mật khẩu!");
+          if (!firstError) firstError = el;
+        } else if (xacnhan !== matkhau) {
+          var el = setError("xacnhan", "Mật khẩu xác nhận không khớp!");
+          if (!firstError) firstError = el;
+        }
+
+        // 5. Điện thoại: nếu có nhập thì phải là số
+        var regPhone = /^\d+$/;
+        if (dienthoai !== "" && !regPhone.test(dienthoai)) {
+          var el = setError("dienthoai", "Điện thoại chỉ được chứa số!");
+          if (!firstError) firstError = el;
+        }
+
+        // 6. Email: nếu có nhập thì phải đúng định dạng
+        var regEmail = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+        if (email !== "" && !regEmail.test(email)) {
+          var el = setError("email", "Email không đúng định dạng!");
+          if (!firstError) firstError = el;
+        }
+
+        // Nếu có lỗi → focus ô đầu tiên bị lỗi
+        if (firstError) {
+          firstError.focus();
+          return;
+        }
+
+        // Tất cả hợp lệ → lưu dữ liệu và chuyển trang
+        var data = {
+          hovaten: hovaten,
+          tendangnhap: tendangnhap,
+          ngaysinh: ngay + "/" + thang + "/" + nam,
+          dienthoai: dienthoai,
+          diachi: diachi,
+          email: email,
+          sothich: sothich,
+        };
+
+        localStorage.setItem("thongtin", JSON.stringify(data));
+        window.location.href = "thongtin.html";
+      }
+
+      function huy() {
+        // Xóa tất cả các trường
+        document.getElementById("hovaten").value = "";
+        document.getElementById("tendangnhap").value = "";
+        document.getElementById("matkhau").value = "";
+        document.getElementById("xacnhan").value = "";
+        document.getElementById("ngay").value = "1";
+        document.getElementById("thang").value = "1";
+        document.getElementById("nam").value = "1940";
+        document.getElementById("dienthoai").value = "";
+        document.getElementById("diachi").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("sothich").value = "Ca Nhạc";
+        clearErrors();
+        document.getElementById("hovaten").focus();
+      }
+    </script>
+  </body>
+</html>

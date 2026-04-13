@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>T-SPEED COMPANY</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 13px;
+        background: #d0d8e8;
+      }
+
+      /* ===== HEADER ===== */
+      #header {
+        width: 100%;
+        height: 200px;
+        background: url("../img/banner_car.jpg") center/cover no-repeat;
+        overflow: hidden;
+      }
+
+      /* ===== MAIN LAYOUT ===== */
+      #main {
+        display: flex;
+        width: 100%;
+        border-top: 2px solid #999;
+      }
+
+      /* ===== LEFT: BẢNG TIN THỊ TRƯỜNG ===== */
+      #panel-left {
+        width: 200px;
+        min-width: 200px;
+        border-right: 1px solid #999;
+        background: #eef2f8;
+      }
+
+      .panel-title {
+        background: #c8d4e8;
+        text-align: center;
+        padding: 5px;
+        font-weight: bold;
+        color: #003399;
+        border-bottom: 1px solid #999;
+      }
+
+      .section-title {
+        text-align: center;
+        font-weight: bold;
+        color: #003399;
+        background: #dde6f4;
+        padding: 3px;
+        border-bottom: 1px solid #bbb;
+      }
+
+      table.thi-truong {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 0;
+      }
+
+      table.thi-truong th {
+        background: #dde6f4;
+        color: #003399;
+        border: 1px solid #bbb;
+        padding: 4px 8px;
+        text-align: center;
+        font-size: 12px;
+      }
+
+      table.thi-truong td {
+        border: 1px solid #bbb;
+        padding: 5px 8px;
+        text-align: center;
+        min-height: 24px;
+        height: 24px;
+        color: #222;
+        font-size: 12px;
+      }
+
+      /* ===== CENTER: FORM ===== */
+      #panel-center {
+        flex: 1;
+        padding: 10px 16px;
+        background: #f0f4fa;
+        border-right: 1px solid #999;
+      }
+
+      .form-title {
+        text-align: center;
+        font-weight: bold;
+        color: #003399;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      .form-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+
+      .form-row label {
+        width: 75px;
+        font-size: 13px;
+        color: #222;
+        flex-shrink: 0;
+      }
+
+      .form-row input[type="text"] {
+        border: 1px solid #888;
+        padding: 3px 5px;
+        font-size: 13px;
+        width: 180px;
+        background: #fff;
+      }
+
+      .form-row select {
+        border: 1px solid #888;
+        padding: 2px 4px;
+        font-size: 13px;
+        width: 180px;
+        background: #fff;
+      }
+
+      .radio-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        padding-left: 75px;
+        gap: 16px;
+      }
+
+      .radio-row label {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 13px;
+        color: #003399;
+        font-weight: bold;
+      }
+
+      .btn-row {
+        padding-left: 75px;
+        display: flex;
+        gap: 8px;
+      }
+
+      button {
+        padding: 3px 14px;
+        font-size: 13px;
+        border: 1px solid #666;
+        background: #dde;
+        cursor: pointer;
+        border-radius: 2px;
+      }
+
+      button:hover:not(:disabled) {
+        background: #c8d0e8;
+      }
+
+      button:disabled {
+        background: #e8e8e8;
+        color: #aaa;
+        cursor: default;
+      }
+
+      /* ===== RIGHT: BẢNG BÁO GIÁ ===== */
+      #panel-right {
+        width: 220px;
+        min-width: 220px;
+        background: #eef2f8;
+        padding: 0;
+      }
+
+      .bao-gia-title {
+        background: #c8d4e8;
+        text-align: center;
+        padding: 5px;
+        font-weight: bold;
+        color: #003399;
+        border-bottom: 1px solid #999;
+      }
+
+      #bao-gia-content {
+        padding: 10px;
+      }
+
+      #mo-ta {
+        font-size: 12px;
+        color: #003399;
+        line-height: 1.8;
+        margin-bottom: 10px;
+      }
+
+      #mo-ta p {
+        margin-bottom: 2px;
+      }
+
+      #car-img {
+        width: 180px;
+        height: 120px;
+        object-fit: cover;
+        border: 1px solid #aaa;
+        display: block;
+        margin: 0 auto 8px;
+      }
+
+      #car-img.hidden {
+        display: none;
+      }
+
+      #car-price {
+        color: #009900;
+        font-weight: bold;
+        font-size: 13px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <div id="header"></div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main">
+      <!-- LEFT: BẢNG TIN THỊ TRƯỜNG -->
+      <div id="panel-left">
+        <div class="panel-title">Bảng tin thị trường</div>
+
+        <div class="section-title">Vàng</div>
+        <table class="thi-truong">
+          <tr>
+            <th>Mua vào</th>
+            <th>Bán ra</th>
+          </tr>
+          <tr>
+            <td id="vang-mua">&nbsp;</td>
+            <td id="vang-ban">&nbsp;</td>
+          </tr>
+        </table>
+
+        <div class="section-title" style="margin-top: 6px">USD</div>
+        <table class="thi-truong">
+          <tr>
+            <th>Mua vào</th>
+            <th>Bán ra</th>
+          </tr>
+          <tr>
+            <td id="usd-mua">&nbsp;</td>
+            <td id="usd-ban">&nbsp;</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- CENTER: FORM -->
+      <div id="panel-center">
+        <div class="form-title">Cập nhật giá cả thị trường</div>
+
+        <div class="form-row">
+          <label>Mua vào</label>
+          <input type="text" id="txtMuaVao" placeholder="" />
+        </div>
+
+        <div class="form-row">
+          <label>Bán ra</label>
+          <input type="text" id="txtBanRa" placeholder="" />
+        </div>
+
+        <div class="form-row">
+          <label>Loại xe</label>
+          <select id="selLoaiXe">
+            <option value="">-- Chọn loại xe --</option>
+            <option value="../img/car1.jpg;35000">Toyota</option>
+            <option value="../img/car2.jpg;15000">KIA</option>
+            <option value="../img/car3.jpg;40000">Ford</option>
+            <option value="../img/car4.jpg;32000">Civic</option>
+            <option value="../img/car5.jpg;50000">Ferrari</option>
+            <option value="../img/car7.jpg;45000">Mercedes</option>
+          </select>
+        </div>
+
+        <!-- Radio buttons -->
+        <div class="radio-row">
+          <label>
+            <input type="radio" name="loaiCapNhat" id="rdVang" value="1" />
+            Vàng
+          </label>
+          <label>
+            <input type="radio" name="loaiCapNhat" id="rdUSD" value="0" />
+            USD
+          </label>
+        </div>
+
+        <!-- Buttons -->
+        <div class="btn-row">
+          <button id="btnUpdate" onclick="capNhat()">Update</button>
+          <button id="btnState" onclick="xemState()" disabled>State</button>
+        </div>
+      </div>
+
+      <!-- RIGHT: BẢNG BÁO GIÁ -->
+      <div id="panel-right">
+        <div class="bao-gia-title">Bảng báo giá</div>
+        <div id="bao-gia-content">
+          <div id="mo-ta">
+            <p>- với kiểu dáng thể thao, sang trọng</p>
+            <p>- nổi bật, ít tốn nhiên liệu</p>
+            <p>- kiểu dáng thể thao</p>
+          </div>
+          <img id="car-img" src="" alt="Car" class="hidden" />
+          <div id="car-price"></div>
+        </div>
+      </div>
+    </div>
+    <!-- end #main -->
+
+    <script>
+      // ===== 1. Khi trang load: focus Mua vào, State disabled =====
+      window.onload = function () {
+        document.getElementById("txtMuaVao").focus();
+        document.getElementById("btnState").disabled = true;
+      };
+
+      // ===== 2. Blur Mua vào: nếu là số và không rỗng → bật State =====
+      document
+        .getElementById("txtMuaVao")
+        .addEventListener("blur", function () {
+          var val = this.value.trim();
+          var btnState = document.getElementById("btnState");
+          if (val !== "" && !isNaN(val) && val !== "") {
+            btnState.disabled = false;
+          } else {
+            btnState.disabled = true;
+          }
+        });
+
+      // ===== 3. Thay đổi Loại xe → hiển thị hình và giá =====
+      document
+        .getElementById("selLoaiXe")
+        .addEventListener("change", function () {
+          var val = this.value;
+          var imgEl = document.getElementById("car-img");
+          var priceEl = document.getElementById("car-price");
+
+          if (val === "") {
+            imgEl.classList.add("hidden");
+            priceEl.innerHTML = "";
+            return;
+          }
+
+          // Tách chuỗi theo dấu ";"
+          var parts = val.split(";");
+          var imgSrc = parts[0].trim();
+          var price = parts[1].trim();
+
+          imgEl.src = imgSrc;
+          imgEl.classList.remove("hidden");
+          priceEl.innerHTML = "Giá: " + price + " USD";
+        });
+
+      // ===== 4. Nút Update: cập nhật bảng tin thị trường =====
+      function capNhat() {
+        var muaVao = document.getElementById("txtMuaVao").value.trim();
+        var banRa = document.getElementById("txtBanRa").value.trim();
+        var rdVang = document.getElementById("rdVang");
+        var rdUSD = document.getElementById("rdUSD");
+
+        // Kiểm tra đã chọn radio chưa
+        if (!rdVang.checked && !rdUSD.checked) {
+          alert("Vui lòng chọn loại cập nhật: Vàng hoặc USD!");
+          return;
+        }
+
+        if (rdVang.checked) {
+          // Cập nhật vào bảng Vàng
+          document.getElementById("vang-mua").innerHTML = muaVao || "&nbsp;";
+          document.getElementById("vang-ban").innerHTML = banRa || "&nbsp;";
+        } else {
+          // Cập nhật vào bảng USD
+          document.getElementById("usd-mua").innerHTML = muaVao || "&nbsp;";
+          document.getElementById("usd-ban").innerHTML = banRa || "&nbsp;";
+        }
+      }
+
+      // ===== Nút State =====
+      function xemState() {
+        var muaVao = document.getElementById("txtMuaVao").value.trim();
+        var banRa = document.getElementById("txtBanRa").value.trim();
+        alert(
+          "Trạng thái hiện tại:\nMua vào: " + muaVao + "\nBán ra: " + banRa,
+        );
+      }
+    </script>
+  </body>
+</html>

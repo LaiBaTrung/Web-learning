@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chọn Loại Cafe</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 30px;
+        background: #fff;
+      }
+
+      .khung {
+        border: 1px solid #999;
+        padding: 12px 16px 16px 16px;
+        display: inline-block;
+        min-width: 260px;
+      }
+
+      .khung p {
+        margin: 0 0 8px 0;
+        font-size: 14px;
+      }
+
+      .khung label {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 4px;
+        cursor: pointer;
+      }
+
+      .khung label input {
+        margin-right: 6px;
+      }
+
+      button {
+        margin-top: 8px;
+        padding: 3px 14px;
+        font-size: 13px;
+        cursor: pointer;
+        border: 1px solid #999;
+        background: #f0f0f0;
+      }
+
+      button:hover {
+        background: #ddd;
+      }
+
+      .ketqua {
+        margin-top: 10px;
+        font-size: 14px;
+      }
+
+      .ketqua span {
+        color: #cc0000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="khung">
+      <p>Chọn loại cafe :</p>
+
+      <label><input type="checkbox" value="Trung Nguyen" /> Trung Nguyen</label>
+      <label><input type="checkbox" value="Me Kong" /> Me Kong</label>
+      <label><input type="checkbox" value="New Life" /> New Life</label>
+      <label><input type="checkbox" value="Ocean Blue" /> Ocean Blue</label>
+      <label><input type="checkbox" value="Blue Space" /> Blue Space</label>
+      <label><input type="checkbox" value="Windows" /> Windows</label>
+
+      <br />
+      <button onclick="chon()">Chọn</button>
+
+      <div class="ketqua" id="ketqua"></div>
+    </div>
+
+    <script>
+      function chon() {
+        var checkboxes = document.querySelectorAll(
+          "input[type='checkbox']:checked",
+        );
+        var danhSach = [];
+
+        for (var i = 0; i < checkboxes.length; i++) {
+          danhSach.push(checkboxes[i].value);
+        }
+
+        var div = document.getElementById("ketqua");
+
+        if (danhSach.length === 0) {
+          div.innerHTML = "Bạn chưa chọn loại cafe nào!";
+        } else {
+          div.innerHTML =
+            "Bạn chọn cafe: <span>" + danhSach.join(", ") + "</span>";
+        }
+      }
+    </script>
+  </body>
+</html>
