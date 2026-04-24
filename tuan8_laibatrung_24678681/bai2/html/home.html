@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Đặt hoa</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      body {
+        padding: 30px;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      table {
+        border-collapse: collapse;
+        width: 500px;
+      }
+      th,
+      td {
+        border: 1px solid #aaa;
+        padding: 8px 12px;
+        vertical-align: middle;
+      }
+      th {
+        background: #f5f5dc;
+        text-align: center;
+        font-weight: bold;
+      }
+      td {
+        text-align: left;
+      }
+      td:first-child {
+        text-align: center;
+        width: 100px;
+      }
+      td:nth-child(3) {
+        width: 100px;
+      }
+      img {
+        width: 110px;
+        height: 90px;
+        object-fit: cover;
+      }
+      input[type="number"] {
+        width: 120px;
+        padding: 3px 6px;
+        border: 1px solid #ccc;
+      }
+      .total-label {
+        text-align: right;
+        font-weight: bold;
+      }
+      .total-value {
+        font-weight: bold;
+        color: #c00;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Hình ảnh</th>
+          <th>Giá</th>
+          <th>Số lượng</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><img src="../img/hoa1.png" alt="Hoa 1" /></td>
+          <td class="gia">20000</td>
+          <td><input type="number" class="soluong" value="0" min="0" /></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><img src="../img/hoa2.png" alt="Hoa 2" /></td>
+          <td class="gia">40000</td>
+          <td><input type="number" class="soluong" value="0" min="0" /></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><img src="../img/hoa3.png" alt="Hoa 3" /></td>
+          <td class="gia">30000</td>
+          <td><input type="number" class="soluong" value="0" min="0" /></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><img src="../img/hoa4.png" alt="Hoa 4" /></td>
+          <td class="gia">50000</td>
+          <td><input type="number" class="soluong" value="0" min="0" /></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><img src="../img/hoa5.png" alt="Hoa 5" /></td>
+          <td class="gia">30000</td>
+          <td><input type="number" class="soluong" value="0" min="0" /></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2"></td>
+          <td class="total-label">Tổng thành tiền</td>
+          <td class="total-value" id="tongTien">600000</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        function tinhTong() {
+          var tong = 0;
+          $("tbody tr").each(function () {
+            var gia = parseInt($(this).find(".gia").text()) || 0;
+            var sl = parseInt($(this).find(".soluong").val()) || 0;
+            tong += gia * sl;
+          });
+          $("#tongTien").text(tong.toLocaleString("vi-VN"));
+        }
+
+        $(".soluong").on("input", tinhTong);
+        tinhTong();
+      });
+    </script>
+  </body>
+</html>

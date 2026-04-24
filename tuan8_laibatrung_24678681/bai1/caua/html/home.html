@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Đăng Ký Tài Khoản</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #f0f2f5;
+        margin: 0;
+      }
+
+      .form-box {
+        background: #fff;
+        padding: 36px 48px;
+        border: 1px solid #ccc;
+        width: 540px;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+      }
+
+      h3 {
+        text-align: center;
+        font-size: 1rem;
+        border-top: 1px solid #ccc;
+        padding-top: 16px;
+        margin: 20px 0 14px;
+      }
+
+      .row {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 10px;
+      }
+
+      .row label {
+        width: 150px;
+        text-align: right;
+        padding-top: 5px;
+        font-size: 0.9rem;
+        flex-shrink: 0;
+      }
+
+      .col {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="date"],
+      input[type="tel"],
+      input[type="email"] {
+        border: 1px solid #aaa;
+        padding: 4px 8px;
+        font-size: 0.9rem;
+        width: 100%;
+      }
+
+      input.error {
+        border-color: red;
+      }
+      input.ok {
+        border-color: green;
+      }
+
+      span.msg {
+        color: red;
+        font-size: 0.78rem;
+        display: none;
+        margin-top: 2px;
+      }
+
+      .gender {
+        display: flex;
+        gap: 16px;
+        padding-top: 5px;
+        font-size: 0.9rem;
+      }
+
+      .buttons {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .buttons button {
+        padding: 6px 22px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        margin: 0 4px;
+        background: #222;
+        color: #fff;
+        border: none;
+      }
+
+      .buttons button:hover {
+        background: #444;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-box">
+      <h2>ĐĂNG KÝ TÀI KHOẢN</h2>
+
+      <div class="row">
+        <label>Tên đăng nhập: <span style="color: red">*</span></label>
+        <div class="col">
+          <input type="text" id="txtDN" />
+          <span class="msg" id="errDN"></span>
+        </div>
+      </div>
+
+      <div class="row">
+        <label>Mật khẩu: <span style="color: red">*</span></label>
+        <div class="col">
+          <input type="password" id="txtMK" />
+          <span class="msg" id="errMK"></span>
+        </div>
+      </div>
+
+      <div class="row">
+        <label>Nhập lại mật khẩu: <span style="color: red">*</span></label>
+        <div class="col">
+          <input type="password" id="txtXNMK" />
+          <span class="msg" id="errXNMK"></span>
+        </div>
+      </div>
+
+      <h3>THÔNG TIN CÁ NHÂN</h3>
+
+      <div class="row">
+        <label>Họ và tên: <span style="color: red">*</span></label>
+        <div class="col">
+          <input type="text" id="txtName" />
+          <span class="msg" id="errName"></span>
+        </div>
+      </div>
+
+      <div class="row">
+        <label>Ngày sinh: <span style="color: red">*</span></label>
+        <div class="col">
+          <input type="date" id="txtNgaySinh" />
+          <span class="msg" id="errNgaySinh"></span>
+        </div>
+      </div>
+
+      <div class="row">
+        <label>Giới tính:</label>
+        <div class="col">
+          <div class="gender">
+            <label
+              ><input type="radio" name="gioiTinh" value="Nam" checked />
+              Nam</label
+            >
+            <label><input type="radio" name="gioiTinh" value="Nu" /> Nữ</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <label>Địa chỉ: <span style="color: red">*</span></label>
+        <div class="col">
+          <input type="text" id="txtDC" />
+          <span class="msg" id="errDC"></span>
+        </div>
+      </div>
+
+      <div class="row">
+        <label>Điện thoại: <span style="color: red">*</span></label>
+        <div class="col">
+          <input type="tel" id="txtDT" />
+          <span class="msg" id="errDT">phải là số</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <label>Email: <span style="color: red">*</span></label>
+        <div class="col">
+          <input type="email" id="txtEmail" />
+          <span class="msg" id="errEmail">nhập đúng địa chỉ email</span>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button id="btnDangKy">Đăng ký</button>
+        <button id="btnHuy">Hủy</button>
+      </div>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      $(function () {
+        function validate(id, errId, check) {
+          var val = $("#" + id)
+            .val()
+            .trim();
+          var result = check(val);
+          if (result === true) {
+            $("#" + id)
+              .removeClass("error")
+              .addClass("ok");
+            $("#" + errId).hide();
+            return true;
+          } else {
+            $("#" + id)
+              .removeClass("ok")
+              .addClass("error");
+            $("#" + errId)
+              .text(result)
+              .show();
+            return false;
+          }
+        }
+
+        function checkDN(v) {
+          if (!v) return "Không được để trống";
+          if (!/^[a-zA-Z]\S*$/.test(v))
+            return "Bắt đầu bằng chữ cái, không có khoảng trắng";
+          return true;
+        }
+
+        function checkMK(v) {
+          if (!v) return "Không được để trống";
+          if (!/^(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/.test(v))
+            return "Tối thiểu 8 ký tự, có số, chữ hoa và ký tự đặc biệt";
+          return true;
+        }
+
+        function checkXNMK(v) {
+          if (!v) return "Không được để trống";
+          if (v !== $("#txtMK").val()) return "Mật khẩu nhập lại không khớp";
+          return true;
+        }
+
+        function checkName(v) {
+          if (!v) return "Không được để trống";
+          var words = v.split(/\s+/);
+          if (words.length < 2) return "Phải có ít nhất Họ và Tên";
+          if (
+            words.some(function (w) {
+              return !/^[A-Z]/u.test(w);
+            })
+          )
+            return "Ký tự đầu mỗi từ phải viết hoa";
+          return true;
+        }
+
+        function checkNgaySinh(v) {
+          if (!v) return "Không được để trống";
+          var dob = new Date(v);
+          var today = new Date();
+          var age = today.getFullYear() - dob.getFullYear();
+          if (
+            today.getMonth() < dob.getMonth() ||
+            (today.getMonth() === dob.getMonth() &&
+              today.getDate() < dob.getDate())
+          )
+            age--;
+          if (age < 16) return "Phải trên 16 tuổi";
+          return true;
+        }
+
+        function checkDC(v) {
+          if (!v) return "Địa chỉ không được để trống";
+          return true;
+        }
+
+        function checkDT(v) {
+          if (!v) return "Không được để trống";
+          if (!/^(09|03|07|06|05|04)\d{8}$/.test(v))
+            return "Số điện thoại 10 số, bắt đầu 09/03/07/06/05/04";
+          return true;
+        }
+
+        function checkEmail(v) {
+          if (!v) return "Không được để trống";
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v))
+            return "Nhập đúng định dạng email";
+          return true;
+        }
+
+        $("#txtDN").blur(function () {
+          validate("txtDN", "errDN", checkDN);
+        });
+        $("#txtMK").blur(function () {
+          validate("txtMK", "errMK", checkMK);
+        });
+        $("#txtXNMK").blur(function () {
+          validate("txtXNMK", "errXNMK", checkXNMK);
+        });
+        $("#txtName").blur(function () {
+          validate("txtName", "errName", checkName);
+        });
+        $("#txtNgaySinh").blur(function () {
+          validate("txtNgaySinh", "errNgaySinh", checkNgaySinh);
+        });
+        $("#txtDC").blur(function () {
+          validate("txtDC", "errDC", checkDC);
+        });
+        $("#txtDT").blur(function () {
+          validate("txtDT", "errDT", checkDT);
+        });
+        $("#txtEmail").blur(function () {
+          validate("txtEmail", "errEmail", checkEmail);
+        });
+
+        $("#btnDangKy").click(function () {
+          var ok = [
+            validate("txtDN", "errDN", checkDN),
+            validate("txtMK", "errMK", checkMK),
+            validate("txtXNMK", "errXNMK", checkXNMK),
+            validate("txtName", "errName", checkName),
+            validate("txtNgaySinh", "errNgaySinh", checkNgaySinh),
+            validate("txtDC", "errDC", checkDC),
+            validate("txtDT", "errDT", checkDT),
+            validate("txtEmail", "errEmail", checkEmail),
+          ].every(Boolean);
+
+          if (ok) alert("Đăng ký tài khoản thành công!");
+        });
+
+        $("#btnHuy").click(function () {
+          $(
+            'input[type="text"], input[type="password"], input[type="date"], input[type="tel"], input[type="email"]',
+          )
+            .val("")
+            .removeClass("ok error");
+          $('input[name="gioiTinh"]').first().prop("checked", true);
+          $(".msg").hide();
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hoc Ky Quan Doi He 2022</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="container-lg page-wrap py-3">
+      <header class="site-banner">
+        <img
+          src="../img/website.png"
+          alt="Banner Hoc Ky Quan Doi He 2022"
+          class="img-fluid w-100"
+        />
+      </header>
+
+      <nav class="navbar navbar-expand bg-white border border-top-0 shadow-sm">
+        <div class="container-fluid px-2 px-md-3">
+          <ul class="navbar-nav gap-2">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Trang chủ</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#"
+                data-bs-toggle="modal"
+                data-bs-target="#registerModal"
+              >
+                Đăng ký
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <main class="content-card border border-top-0 bg-white shadow-sm">
+        <section class="px-3 px-md-4 pt-4">
+          <h2 class="table-title text-center">DANH SÁCH HỌC VIÊN ĐĂNG KÝ</h2>
+          <div class="table-responsive mt-4">
+            <table class="table table-bordered align-middle member-table mb-0">
+              <thead class="table-light">
+                <tr>
+                  <th>STT</th>
+                  <th>Họ và tên</th>
+                  <th>Giới tính</th>
+                  <th>Số điện thoại</th>
+                  <th>Ngày sinh</th>
+                  <th>Địa chỉ</th>
+                  <th>Khóa học</th>
+                  <th>Học phí</th>
+                </tr>
+              </thead>
+              <tbody id="studentTableBody">
+                <tr>
+                  <td>1</td>
+                  <td>Hoàng Lâm</td>
+                  <td>Nam</td>
+                  <td>090-008888</td>
+                  <td>20/03/2010</td>
+                  <td>123 Nguyễn Du, P5, Gò Vấp, TP.HCM</td>
+                  <td>6 tuần</td>
+                  <td>9,000,000 VNĐ</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <footer class="row g-2 px-3 px-md-4 py-3 student-info">
+          <div class="col-md-4"><strong>MSSV:</strong> 24678681</div>
+          <div class="col-md-4"><strong>Họ và tên:</strong> Lại Bá Trung</div>
+          <div class="col-md-4">
+            <strong>Lớp:</strong> Hệ thống và Công nghệ Web
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <div
+      class="modal fade"
+      id="registerModal"
+      tabindex="-1"
+      aria-labelledby="registerModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title w-100 text-center" id="registerModalLabel">
+              THÔNG TIN HỌC VIÊN
+            </h1>
+            <button
+              type="button"
+              class="btn-close position-absolute end-0 top-0 m-3"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="registerForm" novalidate>
+              <input type="hidden" id="gender" value="Nam" />
+
+              <div class="modal-form-grid">
+                <div class="form-row-custom">
+                  <label for="fullName" class="form-label modal-side-label"
+                    >Họ và tên</label
+                  >
+                  <div class="modal-input-wrap">
+                    <input type="text" class="form-control" id="fullName" />
+                    <div class="error-message" id="fullNameError"></div>
+                  </div>
+                </div>
+
+                <div class="form-row-custom">
+                  <label for="phone" class="form-label modal-side-label"
+                    >Số điện thoại</label
+                  >
+                  <div class="modal-input-wrap">
+                    <input type="text" class="form-control" id="phone" />
+                    <div class="error-message" id="phoneError"></div>
+                  </div>
+                </div>
+
+                <div class="form-row-custom">
+                  <label for="birthDate" class="form-label modal-side-label"
+                    >Ngày sinh</label
+                  >
+                  <div class="modal-input-wrap">
+                    <input type="date" class="form-control" id="birthDate" />
+                    <div class="error-message" id="birthDateError"></div>
+                  </div>
+                </div>
+
+                <div class="form-row-custom">
+                  <label for="address" class="form-label modal-side-label"
+                    >Địa chỉ</label
+                  >
+                  <div class="modal-input-wrap">
+                    <input type="text" class="form-control" id="address" />
+                    <div class="error-message" id="addressError"></div>
+                  </div>
+                </div>
+
+                <div class="form-row-custom">
+                  <label
+                    for="course"
+                    class="form-label modal-side-label label-multiline"
+                  >
+                    Bạn muốn tham<br />gia khóa học nào?
+                  </label>
+                  <div class="modal-input-wrap">
+                    <select class="form-select" id="course">
+                      <option value="">Chọn khóa học</option>
+                      <option value="2 tuần">Khóa 2 tuần</option>
+                      <option value="4 tuần">Khóa 4 tuần</option>
+                      <option value="6 tuần">Khóa 6 tuần</option>
+                    </select>
+                    <div class="error-message" id="courseError"></div>
+                  </div>
+                </div>
+
+                <div class="form-row-custom">
+                  <label for="tuition" class="form-label modal-side-label"
+                    >Học phí</label
+                  >
+                  <div class="modal-input-wrap">
+                    <input
+                      type="text"
+                      class="form-control form-control-muted"
+                      id="tuition"
+                      readonly
+                    />
+                  </div>
+                </div>
+
+                <div class="form-row-custom">
+                  <label for="avatar" class="form-label modal-side-label"
+                    >Ảnh đại diện</label
+                  >
+                  <div class="modal-input-wrap">
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="avatar"
+                      accept=".jpg,.jpeg,.png,.gif"
+                    />
+                    <div class="error-message" id="avatarError"></div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer border-0">
+            <button type="button" class="btn btn-save w-100" id="saveStudent">
+              Lưu
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

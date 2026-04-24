@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Đăng ký môn học</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      body {
+        padding: 30px;
+        font-family: Arial, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #f5f5f5;
+      }
+
+      .main-box {
+        border: 3px solid #000;
+        outline: 4px solid #add8e6;
+        padding: 24px 28px;
+        background: #fff;
+        min-width: 500px;
+      }
+
+      .form-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        gap: 8px;
+      }
+
+      .form-row label {
+        width: 70px;
+        flex-shrink: 0;
+      }
+
+      .form-row input[type="text"],
+      .form-row select {
+        border: 1px solid #aaa;
+        padding: 3px 6px;
+        font-size: 0.9rem;
+        width: 280px;
+      }
+
+      .msg {
+        color: red;
+        font-size: 0.78rem;
+        margin-left: 78px;
+        margin-bottom: 6px;
+        display: none;
+      }
+
+      .radio-wrap {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+      }
+
+      button#btnDangKy {
+        margin-top: 6px;
+        padding: 4px 14px;
+        font-size: 0.9rem;
+        cursor: pointer;
+      }
+
+      table {
+        border-collapse: collapse;
+        margin-top: 20px;
+        width: 100%;
+      }
+
+      th,
+      td {
+        border: 1px solid #aaa;
+        padding: 6px 12px;
+        text-align: center;
+      }
+
+      th {
+        font-weight: bold;
+        background: #f0f0f0;
+      }
+      td:nth-child(3) {
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-box">
+      <div class="form-row">
+        <label>Họ tên:</label>
+        <input type="text" id="txtHoTen" />
+      </div>
+      <div class="msg" id="errHoTen"></div>
+
+      <div class="form-row">
+        <label>Lớp:</label>
+        <select id="selLop">
+          <option>Đại học Kỹ thuật phần mềm 9A</option>
+          <option>Đại học Kỹ thuật phần mềm 9B</option>
+          <option>Đại học Công nghệ thông tin 9A</option>
+          <option>Đại học Công nghệ thông tin 9B</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label>Môn học:</label>
+        <select id="selMonHoc">
+          <option>Lập trình hướng đối tượng</option>
+          <option>Cơ sở dữ liệu</option>
+          <option>Lập trình Web</option>
+          <option>Mạng máy tính</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label>Loại:</label>
+        <div class="radio-wrap">
+          <label
+            ><input type="radio" name="loai" value="Lý thuyết" checked /> Lý
+            thuyết</label
+          >
+          <label
+            ><input type="radio" name="loai" value="Thực hành" /> Thực
+            hành</label
+          >
+        </div>
+      </div>
+
+      <button id="btnDangKy" disabled>Đăng ký</button>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Họ tên</th>
+            <th>Lớp</th>
+            <th>Môn học đăng ký</th>
+            <th>Loại</th>
+          </tr>
+        </thead>
+        <tbody id="tblBody">
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $("#txtHoTen").focus();
+
+        function kiemTraHoTen(v) {
+          if (!v) return "Họ tên không được để trống";
+          var words = v.split(/\s+/);
+          var ok = words.every(function (w) {
+            return /^[A-Z]/u.test(w);
+          });
+          if (!ok) return "Chữ cái đầu mỗi từ phải viết hoa";
+          return true;
+        }
+
+        function capNhatNut() {
+          var kq = kiemTraHoTen($("#txtHoTen").val().trim());
+          $("#btnDangKy").prop("disabled", kq !== true);
+        }
+
+        $("#txtHoTen").on("input", function () {
+          var kq = kiemTraHoTen($(this).val().trim());
+          if (kq === true) {
+            $("#errHoTen").hide();
+          } else {
+            $("#errHoTen").text(kq).show();
+          }
+          capNhatNut();
+        });
+
+        $("#btnDangKy").click(function () {
+          var hoTen = $("#txtHoTen").val().trim();
+          var lop = $("#selLop").val();
+          var mon = $("#selMonHoc").val();
+          var loai = $('input[name="loai"]:checked').val();
+
+          var $tbody = $("#tblBody");
+          if ($tbody.find("tr:first td:first").text() === "") {
+            $tbody.empty();
+          }
+
+          $tbody.append(
+            "<tr><td>" +
+              hoTen +
+              "</td><td>" +
+              lop +
+              "</td><td>" +
+              mon +
+              "</td><td>" +
+              loai +
+              "</td></tr>",
+          );
+
+          $("#txtHoTen").val("");
+          $("#errHoTen").hide();
+          $("#btnDangKy").prop("disabled", true);
+          $("#txtHoTen").focus();
+        });
+      });
+    </script>
+  </body>
+</html>

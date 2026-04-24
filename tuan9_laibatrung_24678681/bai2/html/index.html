@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danh Sach Tour Du Lich Viet</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="page-wrap container py-4 py-lg-5">
+      <section class="hero-section shadow-sm">
+        <div class="hero-banner">
+          <img
+            src="../img/banner-5.png"
+            alt="Banner du lịch"
+            class="img-fluid w-100"
+          />
+        </div>
+
+        <nav class="navbar navbar-expand-sm bg-white border-top border-bottom">
+          <div class="container-fluid px-3">
+            <ul class="navbar-nav flex-row flex-wrap gap-2 gap-sm-3">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Trang chủ</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                  id="openTourLink"
+                  data-bs-toggle="modal"
+                  data-bs-target="#tourModal"
+                >
+                  Mở Tour mới
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </section>
+
+      <section class="content-card bg-white shadow-sm mt-4">
+        <div class="px-3 px-lg-4 pt-4">
+          <div class="section-heading text-center">
+            <h2 class="table-title mb-2">Danh Sách Tour - Du Lịch Việt</h2>
+          </div>
+        </div>
+
+        <div class="table-responsive px-3 px-lg-4 py-4">
+          <table class="table table-hover align-middle member-table mb-0">
+            <thead>
+              <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Mã Tour</th>
+                <th scope="col">Hành Trình</th>
+                <th scope="col">Ngày Khởi Hành</th>
+                <th scope="col">Thời Gian</th>
+                <th scope="col">Giá Tour</th>
+                <th scope="col">Ảnh Đại Diện</th>
+              </tr>
+            </thead>
+            <tbody id="tourTableBody">
+              <tr>
+                <td>1</td>
+                <td>HAN-HCM-08-2026</td>
+                <td>Hà Nội - Hồ Chí Minh 4 ngày 3 đêm</td>
+                <td>30/08/2026</td>
+                <td>4 ngày 3 đêm</td>
+                <td>8.500.000 VND</td>
+                <td>hcm.jpg</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>HAN-DNG-09-2026</td>
+                <td>Hà Nội - Huế - Đà Nẵng 5 ngày 4 đêm</td>
+                <td>15/09/2026</td>
+                <td>5 ngày 4 đêm</td>
+                <td>10.500.000 VND</td>
+                <td>hue.png</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <div
+      class="modal fade"
+      id="tourModal"
+      tabindex="-1"
+      aria-labelledby="tourModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title w-100 text-center" id="tourModalLabel">
+              Thông Tin Tour
+            </h3>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="tourForm" novalidate>
+              <div class="modal-form-grid">
+                <div class="form-row-custom">
+                  <label class="modal-side-label" for="tourCode"
+                    >Mã Tour <span class="required-mark">*</span></label
+                  >
+                  <div class="modal-input-wrap">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="tourCode"
+                      placeholder=" HAN-DNG-09-2026"
+                    />
+                    <small class="error-message" id="tourCodeError"></small>
+                  </div>
+                </div>
+
+                <div class="form-row-custom">
+                  <label class="modal-side-label" for="itinerary"
+                    >Hành Trình <span class="required-mark">*</span></label
+                  >
+                  <div class="modal-input-wrap">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="itinerary"
+                      placeholder="Hà Nội - Huế - Đà Nẵng 5 ngày 4 đêm"
+                    />
+                    <small class="error-message" id="itineraryError"></small>
+                  </div>
+                </div>
+
+                <div class="form-row-custom">
+                  <label class="modal-side-label" for="departureDate">
+                    Ngày khởi hành <span class="required-mark">*</span>
+                  </label>
+                  <div class="modal-input-wrap">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="departureDate"
+                    />
+                    <small
+                      class="error-message"
+                      id="departureDateError"
+                    ></small>
+                  </div>
+                </div>
+
+                <div class="form-row-custom">
+                  <label class="modal-side-label" for="duration"
+                    >Thời Gian <span class="required-mark">*</span></label
+                  >
+                  <div class="modal-input-wrap">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="duration"
+                      placeholder="5 ngày 4 đêm"
+                    />
+                    <small class="error-message" id="durationError"></small>
+                  </div>
+                </div>
+
+                <div class="form-row-custom">
+                  <label class="modal-side-label" for="price"
+                    >Giá Tour <span class="required-mark">*</span></label
+                  >
+                  <div class="modal-input-wrap">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="price"
+                      min="1"
+                      placeholder="1000000"
+                    />
+                    <small class="error-message" id="priceError"></small>
+                  </div>
+                </div>
+
+                <div class="form-row-custom">
+                  <label class="modal-side-label" for="tourImage">
+                    Ảnh đại diện <span class="required-mark">*</span>
+                  </label>
+                  <div class="modal-input-wrap">
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="tourImage"
+                      accept=".jpg,.gif,.png"
+                    />
+                    <small class="error-message" id="tourImageError"></small>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-save w-100" id="saveTour">
+              Lưu
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>
